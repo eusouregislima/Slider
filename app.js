@@ -11,7 +11,7 @@ let lastPosition = items.length - 1;
 let autoPlay;
 
 const startAutoPlay = () => {
-    clearInterval(autoPlay); 
+    clearInterval(autoPlay);
     autoPlay = setInterval(() => {
         nextBtn.click();
     }, 5000);
@@ -20,11 +20,11 @@ startAutoPlay();
 
 const setSlider = () => {
     let itemActiveOld = carousel.querySelector('.list .item.active');
-    if(itemActiveOld) itemActiveOld.classList.remove('active');
+    if (itemActiveOld) itemActiveOld.classList.remove('active');
     items[active].classList.add('active');
 
     let dotActiveOld = indicator.querySelector('.indicators ul li.active');
-    if(dotActiveOld) dotActiveOld.classList.remove('active');
+    if (dotActiveOld) dotActiveOld.classList.remove('active');
     dots[active].classList.add('active');
 
     indicator.querySelector('.number').innerText = '0' + (active + 1);
@@ -37,7 +37,7 @@ nextBtn.onclick = () => {
     carousel.style.setProperty('--calculation', 1);
     setSlider();
 }
-prev.onclick = () => {
+prevBtn.onclick = () => {
     active = active - 1 < firstPosition ? lastPosition : active - 1;
     carousel.style.setProperty('--calculation', -1);
     setSlider();
